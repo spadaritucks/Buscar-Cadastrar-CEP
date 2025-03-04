@@ -33,6 +33,7 @@ export default defineConfig({
     tailwindcss(),
   ],
 })
+```
 
 - Insira essa importação no arquivo de estilização global index.css
 @import "tailwindcss";
