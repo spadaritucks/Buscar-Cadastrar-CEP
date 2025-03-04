@@ -11,6 +11,7 @@ Repositório do sistema de cadastro e consulta de cep e endereços feito em Reac
 - React
 - Typescript
 - Vite
+- Tailwind CSS v4.0
 
 
 Execute os comandos para subir a aplicação:
