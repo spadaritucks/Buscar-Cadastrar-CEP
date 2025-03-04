@@ -10,6 +10,7 @@ Repositório do sistema de cadastro e consulta de cep e endereços feito em Reac
 
 - React
 - Typescript
+- Vite
 
 
 Execute os comandos para subir a aplicação:
@@ -17,8 +18,25 @@ Execute os comandos para subir a aplicação:
 ```
 npm install
 npm install react-router-dom
+npm install tailwindcss @tailwindcss/vite
 npm run dev
 ```
+
+## Configuração do Tailwind CSS v.4.0
+- Insira a configuração abaixo no vite.config.ts
+```js
+import { defineConfig } from 'vite'
+import tailwindcss from '@tailwindcss/vite'
+
+export default defineConfig({
+  plugins: [
+    tailwindcss(),
+  ],
+})
+
+- Insira essa importação no arquivo de estilização global index.css
+@import "tailwindcss";
+
 
 ## Paginas
 
