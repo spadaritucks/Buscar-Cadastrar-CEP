@@ -3,6 +3,7 @@ import { useState } from "react";
 import cepService from "../services/cep.service";
 import Input from "../components/input";
 import { Locais } from "../interfaces/local";
+import useNumericInput from "../hooks/inputNumeric";
 
 export default function Cadastro() {
 
@@ -74,6 +75,7 @@ export default function Cadastro() {
 
         locaisArmazenados.push(localFormdata);
         localStorage.setItem('locais', JSON.stringify(locaisArmazenados))
+        alert('Dados Cadastrados com Sucesso')
     }
 
 
@@ -89,6 +91,8 @@ export default function Cadastro() {
                     type='text'
                     maxLength={8} // Limita o campo para 8 caracteres
                     onChange={(e) => handleCepChange(e.target.value)} //Passar o valor do campo para a função de CEP
+                    onInput={useNumericInput}
+                    required
                     /> 
                 <Input
                     label='Logradouro'
@@ -97,6 +101,7 @@ export default function Cadastro() {
                     readOnly
                     value={form.logradouro}
                     onChange={(e) => setForm({ ...form, logradouro: e.target.value })} // Passar o valor do campo para o estado do formulário
+                    required
                     />
                 <Input
                     label='Cidade'
@@ -105,6 +110,7 @@ export default function Cadastro() {
                     readOnly
                     value={form.cidade}
                     onChange={(e) => setForm({ ...form, cidade: e.target.value })}  // Passar o valor do campo para o estado do formulário
+                    required
                     />
                 <Input
                     label='Bairro'
@@ -113,6 +119,7 @@ export default function Cadastro() {
                     readOnly
                     value={form.bairro}
                     onChange={(e) => setForm({ ...form, bairro: e.target.value })}  // Passar o valor do campo para o estado do formulário
+                    required
                     />
                 <Input
                     label='Estado'
@@ -121,11 +128,15 @@ export default function Cadastro() {
                     readOnly
                     value={form.estado}
                     onChange={(e) => setForm({ ...form, estado: e.target.value })}   // Passar o valor do campo para o estado do formulário
+                    required
                      />
                 <Input
                     label='Numero da Residencia'
                     name='numero'
-                    type='text' />
+                    type='text'
+                    onInput={useNumericInput} 
+                    required
+                    />
                 <div className='col-span-2 flex flex-col gap-6'>
                     <button
                         className='bg-blue-400 rounded-sm px-4 py-2 border-none w-full h-10 hover:bg-blue-800 cursor-pointer text-white'

@@ -13,10 +13,11 @@ interface InputProps {
     onInput? : (e: React.ChangeEvent<HTMLInputElement>) => void
     readOnly?: boolean
     maxLength?: number
+    required? : boolean
 }
 
 //Declaração do Componente Input + Label e sua Estilização
-export default function Input({ type, name, value, label, placeholder, onChange, onInput, readOnly, maxLength }: InputProps) {
+export default function Input({ type, name, value, label, placeholder, onChange, onInput, readOnly, maxLength, required }: InputProps) {
 
     return (
         <div className="flex flex-col items-start justify-start gap-2 w-full ">
@@ -28,9 +29,10 @@ export default function Input({ type, name, value, label, placeholder, onChange,
                 placeholder={placeholder} 
                 readOnly={readOnly}
                 maxLength={maxLength}
+                required = {required}
                 onInput={onInput}
                 onChange={onChange}
-                className="rounded-sm bg-stone-300 w-full h-10 px-4 py-2"
+                className="rounded-sm bg-stone-300 w-full h-10 px-4 py-2 outline-none"
                 
             />
         </div>
