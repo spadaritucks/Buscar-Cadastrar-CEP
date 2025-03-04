@@ -30,10 +30,18 @@ npm run dev
 
  ### pages/cadastro.tsx
  - Pagina de cadastro de cep e endereço e sua logica de manipulação de campos de formulario
- - A busca pelo CEP com o ViaCep é feito junto com a importação da função cepService no qual sua logica pode vista em services/cep.service.ts
+ - A busca pelo CEP com o ViaCep é feito junto com a importação da função cepService no qual sua logica pode vista em src/services/cep.service.ts
  - Metodo de armazenamento de dados : LocalStorage - logica dentro da função HandleSubmit
 
   ### pages/listagem.tsx
   - Pagina onde é exibido a lista de endereços cadastrados no localStorage
+  - Resgate de dados é feita junto com a interface Locais no qual pode ser vista em src/interfaces/local.ts
 
+## Interfaces
+- **Local.ts**
 
+## Services
+- **cep.service.ts**
+
+## Hooks
+  - **inputNumeric.tsx**
