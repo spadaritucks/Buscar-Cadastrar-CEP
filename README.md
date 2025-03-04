@@ -38,10 +38,10 @@ npm run dev
   - Resgate de dados é feita junto com a interface Locais no qual pode ser vista em src/interfaces/local.ts
 
 ## Interfaces
-- **Local.ts**
+- **src/interfaces/Local.ts**: Interface que define a estrutura de dados para o LocalStorage
 
 ## Services
-- **cep.service.ts**
+- **src/services/cep.service.ts** : Função que busca o CEP pelo ViaCep e retorna o resultado em formato de objeto
 
 ## Hooks
-  - **inputNumeric.tsx**
+  - **src/hooks/inputNumeric.tsx** : Função que verifica se o valor digitado é um número e impede o digito de letras 
