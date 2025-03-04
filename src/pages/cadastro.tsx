@@ -2,6 +2,7 @@
 import { useState } from "react";
 import cepService from "../services/cep.service";
 import Input from "../components/input";
+import { Locais } from "../interfaces/local";
 
 export default function Cadastro() {
     const [form, setForm] = useState({
@@ -16,6 +17,22 @@ export default function Cadastro() {
 
     const handleCepChange = async (cep: string) => {
         if (cep.length === 8) {
+            const cepCache: Locais[] = JSON.parse(localStorage.getItem('locais') || "[]");
+            const local = cepCache.find((local) => local.cep === cep);
+
+            if (local) {
+                setForm((prev) => ({
+                    ...prev,
+                    cep: cep,
+                    logradouro: local.logradouro,
+                    cidade: local.cidade,
+                    bairro: local.bairro,
+                    estado: local.estado,
+                })
+                )
+                return
+            }
+
             const data = await cepService(cep);
 
             data.erro ? alert('CEP não encontrado') :
@@ -49,9 +66,6 @@ export default function Cadastro() {
 
         locaisArmazenados.push(localFormdata);
         localStorage.setItem('locais', JSON.stringify(locaisArmazenados))
-
-
-
     }
 
 

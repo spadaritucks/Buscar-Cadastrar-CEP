@@ -17,8 +17,6 @@ export default function Listagem() {
     }, [])
 
 
-
-
     return (
         <section className="w-full h-screen flex flex-col items-center justify-center gap-8">
             <h1 className='text-3xl font-bold text-white '>Listagem de Endereços</h1>
