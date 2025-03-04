@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unused-expressions */
+
 import { useState } from "react";
 import cepService from "../services/cep.service";
 import Input from "../components/input";
