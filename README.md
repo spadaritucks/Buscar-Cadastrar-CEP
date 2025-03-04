@@ -16,6 +16,24 @@ Execute os comandos para subir a aplicação:
 
 ```
 npm install
+npm install react-router-dom
 npm run dev
 ```
+
+## Paginas
+
+ ### main.tsx
+ - Arquivo raiz do projeto, onde se encontra as rotas feitas com react-router-dom
+
+ ### App.tsx
+ - Pagina Principal do sistema, onde contem as ancoras para cadastro e listagem de endereços
+
+ ### pages/cadastro.tsx
+ - Pagina de cadastro de cep e endereço e sua logica de manipulação de campos de formulario
+ - A busca pelo CEP com o ViaCep é feito junto com a importação da função cepService no qual sua logica pode vista em services/cep.service.ts
+ - Metodo de armazenamento de dados : LocalStorage - logica dentro da função HandleSubmit
+
+  ### pages/listagem.tsx
+  - Pagina onde é exibido a lista de endereços cadastrados no localStorage
+
 
