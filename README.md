@@ -34,9 +34,10 @@ export default defineConfig({
   ],
 })
 ```
-
 - Insira essa importação no arquivo de estilização global index.css
+```css
 @import "tailwindcss";
+```
 
 
 ## Paginas
