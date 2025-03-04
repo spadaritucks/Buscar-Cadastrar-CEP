@@ -1,4 +1,6 @@
+//Componente Input utilizado na pagina cadastro.tsx
 
+//Declaração dos tipos dos atributos necessarios nos inputs
 type InputType = 'text' | 'password' | 'email' | 'file'
 
 interface InputProps {
@@ -13,7 +15,7 @@ interface InputProps {
     maxLength?: number
 }
 
-
+//Declaração do Componente Input + Label e sua Estilização
 export default function Input({ type, name, value, label, placeholder, onChange, onInput, readOnly, maxLength }: InputProps) {
 
     return (
